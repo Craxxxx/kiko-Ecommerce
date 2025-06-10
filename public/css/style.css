@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Logo section */
+.logo-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.logo-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    animation: scaleIn 1.2s ease-out;
+}
+
+/* Form section */
+.form-section {
+    width: 60%;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    animation: slideInFromRight 0.8s ease-out;
+}
+
+.form-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+    animation: slideInFromTop 1s ease-out;
+}
+
+.login-link {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.login-link a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #555;
+}
+
+.signup-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    animation: slideInFromBottom 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #ececec;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #999;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.create-account-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+    animation: slideInFromBottom 1s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+
+.create-account-btn:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.create-account-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Navbar Animations */
+.navbar {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.nav-logo {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.nav-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.icon-link {
+    transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+    transform: scale(1.15);
+}
+
+/* Hero Section Animations */
+.hero-section {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+    animation: slideInFromLeft 1.2s ease-out;
+}
+
+.hero-images {
+    animation: slideInFromRight 1.2s ease-out;
+}
+
+.shop-now-btn {
+    animation: slideInFromBottom 1.2s ease-out;
+    transition: all 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shop-now-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Product Card Animations */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.product-image img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Brand Section Animations */
+.brand-title {
+    animation: slideInFromTop 0.8s ease-out;
+}
+
+.products-grid {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Category Tabs Animations */
+.category-tab {
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .logo-section, .form-section {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    
+    .logo-images {
+        margin-top: 40px;
+    }
+    
+    .form-section {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-title {
+        font-size: 28px;
+    }
+    
+    .form-section {
+        padding: 20px;
+    }
+}
+
+/* Custom placeholder color */
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+} 
+
+/* Modal animation refinements */
+.modal-content {
+    animation: scaleIn 0.4s ease-out !important;
+} 
