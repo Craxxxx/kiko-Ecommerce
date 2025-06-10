@@ -18,7 +18,7 @@
         </div>
         <div class="form-section">
             <h1 class="form-title">Sign Up</h1>
-            <p class="login-link">Already have on account? <a href="{{ route('login') }}">Log in</a></p>
+            <p class="login-link">Already have on account? <a href="{{ route('login.form') }}">Log in</a></p>
             
             <form method="POST" action="{{ route('register.form') }}" class="signup-form">
                 @csrf

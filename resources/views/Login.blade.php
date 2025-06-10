@@ -18,9 +18,12 @@
         </div>
         <div class="form-section">
             <h1 class="form-title">Log In</h1>
-            <p class="login-link">Don't have an account yet? <a href="{{ route('register') }}">Sign Up</a></p>
+            <p class="login-link">Don't have an account yet? <a href="{{ route('register.form') }}">Sign Up</a></p>
             
-            <form method="POST" action="{{ route('login') }}" class="signup-form">
+            <form method="POST" action="{{ route('login.process') }}" class="signup-form">
+                @csrf
+
+                
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" class="form-control">
@@ -52,10 +55,10 @@
         });
         
         // Redirect to dashboard after login
-        document.querySelector('.create-account-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = 'dashboard.html';
-        });
+        // document.querySelector('.create-account-btn').addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     window.location.href = 'dashboard.html';
+        // });
     </script>
 </body>
 </html> 

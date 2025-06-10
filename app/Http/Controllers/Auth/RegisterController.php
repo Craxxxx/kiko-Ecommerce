@@ -26,6 +26,6 @@ class RegisterController extends Controller
         ]);
 
         // ✅ Redirect to dashboard or login
-        return redirect()->route('login')->with('success', 'Account created successfully. Please log in.');
+        return redirect()->route('login.form')->with('success', 'Account created successfully. Please log in.');
     }
 }
