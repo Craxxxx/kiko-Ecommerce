@@ -8,15 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('colors', function (Blueprint $table) {
-            $table->id(); // color_id
-            $table->string('color_name');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
+            // Each user has one cart
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('colors');
+        Schema::dropIfExists('carts');
     }
 };

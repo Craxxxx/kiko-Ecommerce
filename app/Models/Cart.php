@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Order extends Model
+class cart extends Model
 {
-   protected $fillable = ['user_id','total_price','status'];
+    protected $fillable = ['user_id'];
 
     public function user()
     {
@@ -16,6 +15,6 @@ class Order extends Model
 
     public function items()
     {
-        return $this->hasMany(OrderItem::class);
+        return $this->hasMany(CartItem::class);
     }
 }
