@@ -34,6 +34,7 @@
   document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   </script>
   <script src="{{ asset('js/cart.js') }}" defer></script>
+  <script src="{{ asset('js/cart-action.js') }}" defer></script>
   @stack('scripts')
 </body>
 </html>

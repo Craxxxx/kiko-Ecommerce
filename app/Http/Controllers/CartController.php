@@ -16,8 +16,7 @@ class CartController extends Controller
         ]);
 
         $cart = Cart::firstOrCreate(
-            ['user_id' => Auth::id()],
-            ['status'  => 'active']
+            ['user_id' => Auth::id()]
         );
 
         $item = CartItem::firstOrNew([
@@ -32,5 +31,21 @@ class CartController extends Controller
 
         // always JSON
         return response()->json(['count' => $count]);
+    }
+
+     /**
+     * Display the shopping cart.
+     */
+    public function show()
+    {
+        // Get or create active cart
+        $cart = Cart::with('items.product')
+                     ->firstOrCreate(['user_id'=>Auth::id()]);
+
+        // Pass cart & items to view
+        return view('cart', [
+            'cartItems' => $cart->items,
+            'shipping'  => 10.00,
+        ]);
     }
 }
