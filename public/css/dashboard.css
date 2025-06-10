@@ -1,0 +1,189 @@
+        .hero-section {
+            display: flex;
+            padding: 60px 5%;
+            background-color: #ffffff;
+            min-height: 90vh;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 45%;
+            padding-right: 40px;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.2;
+            font-family: 'Abhaya Libre', serif;
+        }
+
+        .hero-images {
+            width: 55%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logo-variant {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+        }
+
+        .shop-now-btn {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: background-color 0.3s;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #333;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0;
+            margin-top: 60px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .category-tab {
+            padding: 15px 40px;
+            text-decoration: none;
+            color: #000;
+            font-family: 'Abhaya Libre', serif;
+            font-weight: 800;
+            font-size: 36px;
+            position: relative;
+            border: none;
+            background: transparent;
+        }
+
+        .category-tab:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background-color: #e0e0e0;
+        }
+
+        .category-tab:hover {
+            color: #555;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 80px;
+            font-weight: 500;
+        }
+
+        /* Our Brand Section Styles */
+        .brand-section {
+            padding: 80px 5%;
+            background-color: #ffffff;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .brand-title {
+            font-family: 'Abhaya Libre', serif;
+            font-weight: 800;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .products-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 380px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        .product-name {
+            font-family: 'Abhaya Libre', serif;
+            font-weight: 800;
+            font-size: 28px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .half-star {
+            color: #FFD700;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .half-star:after {
+            content: "★";
+            color: #FFD700;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .rating-value {
+            color: #666;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                justify-content: center;
+            }
+            
+            .product-card {
+                min-width: 300px;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                min-width: 250px;
+                max-width: 100%;
+            }
+        }
