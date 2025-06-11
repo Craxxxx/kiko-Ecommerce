@@ -105,7 +105,7 @@
 
       <div class="cart-actions">
         <a href="{{ route('shop') }}" class="btn btn-outline">Continue Shopping</a>
-        <a href="" class="btn btn-primary">Proceed to Checkout</a>
+        <a href="{{ route('payment.page') }}" class="btn btn-primary">Proceed to Checkout</a>
       </div>
     @endif
   </div>

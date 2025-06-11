@@ -48,4 +48,16 @@ class CartController extends Controller
             'shipping'  => 10.00,
         ]);
     }
+
+    public function paymentPage()
+    {
+        $cart = Auth::user()->cart()->with('items.product')->firstOrFail();
+
+        $cartItems = $cart->items;
+        $cartSubtotal = $cartItems->sum(fn($item) => $item->quantity * $item->product->price);
+        $shipping = 15000;
+        $total = $cartSubtotal + $shipping;
+
+        return view('payment', compact('cartItems', 'cartSubtotal', 'shipping', 'total'));
+    }
 }

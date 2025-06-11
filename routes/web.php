@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\OrderController;
 
 // 1) Redirect root to registration PAG
 Route::redirect('/', '/register');
@@ -39,6 +40,7 @@ Route::get('/cart', [CartController::class, 'show'])
 Route::post('/cart/add', [CartController::class, 'add'])
      ->middleware('auth')
      ->name('cart.add');
+Route::get('/payment', [CartController::class, 'paymentPage'])->name('payment.page');
 //update item in cart (change quantity)
 Route::patch('/cart/item/{id}', [CartItemController::class, 'update'])
      ->name('cart.update')->middleware('auth');
@@ -47,5 +49,11 @@ Route::delete('/cart/item/{id}', [CartItemController::class, 'destroy'])
      ->name('cart.destroy')->middleware('auth');
 
 
-//payment page
-Route::view('/payment', 'Payment')->name('payment');
+
+
+//checkout 
+Route::post('/checkout', [OrderController::class, 'processCheckout'])->name('checkout.process');
+
+Route::get('/checkout/success', function () {
+    return view('order-success');
+})->name('checkout.success');
